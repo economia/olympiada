@@ -1,4 +1,7 @@
+install.packages("rJava")
 require(devtools)
+install_github('seleniumJars', 'LluisRamon')
+install_github('relenium', 'LluisRamon')
 require(rJava)
 require(seleniumJars)
 require(relenium)
