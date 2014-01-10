@@ -61,5 +61,7 @@ for (i in roky) {
 
 firefox$close()
 
+medailiste  <- data.frame(rok,sport,disciplina,medaile,stat,jmena,vysledek)
 
+write.csv(medailiste, "../data/medailiste.csv")
 
