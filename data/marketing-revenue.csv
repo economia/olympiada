@@ -1,8 +1,6 @@
-obdobi,Období,1993 – 1996,1997 – 2000,2001 – 2004,2005 – 2008,2009 – 2012
-mesta,Města,Lillehammer / Atlanta,Nagano / Sydney,Salt Lake / Atény,Turín / Peking,Vancouver / Londýn
-prava,Vysílací práva,1251,1845,2232,2570,3850
-partneri,Globální reklamní partneři,279,579,663,866,950
-hostitel,Partneři v hostitelských zemích,534,655,796,1555,1838
-listky,Prodej vstupenek,451,625,411,274,1238
-licence,Poplatky za použití olympijských motivů,115,66,87,185,170
-celkem,Celkem,2630,3770,4189,5450,8046
+obdobi,mesta,prava,partneri,hostitel,listky,licence,celkem
+1993 – 1996,Lillehammer / Atlanta,1251,279,534,451,115,2630
+1997 – 2000,Nagano / Sydney,1845,579,655,625,66,3770
+2001 – 2004,Salt Lake / Atény,2232,663,796,411,87,4189
+2005 – 2008,Turín / Peking,2570,866,1555,274,185,5450
+2009 – 2012,Vancouver / Londýn,3850,950,1838,1238,170,8046
