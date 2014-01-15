@@ -1,0 +1,213 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 387.0,
+		"selected_items":
+		[
+			[
+				"data",
+				"DataConverter: to JSON"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"prett",
+				"HTMLPrettify"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"git",
+				"Git: Init"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"cinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax r",
+				"Set Syntax: R"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"align",
+				"Preferences: Alignment Key Bindings – Default"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 181.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/petrkoci/code/olympiada/txt/marketing.md",
+		"/Users/petrkoci/code/d3-book/chapter_05/muj_pokus.html",
+		"/Users/petrkoci/code/d3-book/chapter_06/01_drawing_divs.html",
+		"/Users/petrkoci/code/d3-book/chapter_06/08_drawing_svgs.html",
+		"/Users/petrkoci/code/d3-book/chapter_05/02_new_element.html",
+		"/Users/petrkoci/code/olympiada/data/medailiste.csv",
+		"/Users/petrkoci/Downloads/kontroly.csv",
+		"/Users/petrkoci/Downloads/stažený soubor",
+		"/Users/petrkoci/Library/Application Support/Sublime Text 2/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/Users/petrkoci/Library/Application Support/Sublime Text 2/Packages/User/test.R",
+		"/Users/petrkoci/Library/Application Support/Sublime Text 2/Packages/User/Git.sublime-settings",
+		"/Users/petrkoci/Library/Application Support/Sublime Text 2/Packages/Git/Git.sublime-settings",
+		"/Users/petrkoci/Library/Application Support/Sublime Text 2/Packages/Alignment/Default (OSX).sublime-keymap",
+		"/Users/petrkoci/Copy/code/titulni-strany-hn-2013/data/meta.json",
+		"/Users/petrkoci/Copy/code/koalicni-smlouva/data/2010.txt",
+		"/Users/petrkoci/Desktop/2010.txt",
+		"/Users/petrkoci/Copy/code/koalicni-smlouva/data/2013.txt",
+		"/Users/petrkoci/Copy/code/koalicni-smlouva/data/koalicni_smlouva_ods_top09_vv.txt",
+		"/Users/petrkoci/Copy/code/koalicni-smlouva/data/koalicni_dohoda.txt",
+		"/Users/petrkoci/Desktop/stories-edit.txt",
+		"/Users/petrkoci/Copy/code/vilnius-prezentace/prezentace.md",
+		"/Users/petrkoci/kurz.csv",
+		"/Users/petrkoci/Desktop/nezam.csv"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Zahraniční politika",
+			"Za zahraniční politiku je primárně odpovědná Vláda České republiky",
+			"Datum,1 EUR",
+			","
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"."
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 317.0,
+	"status_bar_visible": true
+}
