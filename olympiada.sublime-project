@@ -12,6 +12,9 @@
 		},
 		{
 			"path": "data"
+		},
+		{
+			"path": "/Users/petrkoci/code/d3-book"
 		}
 	]
 }
