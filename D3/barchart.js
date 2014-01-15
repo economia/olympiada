@@ -1,5 +1,14 @@
-var w = 670;
-var h = 480;
+var margin = {
+    top: 10,
+    right: 10,
+    bottom: 10,
+    left: 10
+};
+
+var w = 670 - margin.left - margin.right;
+var h = 480 - margtin.top - margin.bottom;
+
+
 
 var svg = d3.select("body")
     .append("svg")
@@ -25,7 +34,7 @@ d3.csv("../data/marketing-revenue.csv", function(dataset) {
         .domain([0, d3.max(dataset, function(d, i) {
             return d.celkem;
         })])
-        .range([0, h]);
+        .range([padding, h - padding]);
 
     /* insert elements */
     svg.selectAll("rect")
@@ -44,5 +53,5 @@ d3.csv("../data/marketing-revenue.csv", function(dataset) {
         })
         .attr("fill", "skyblue")
         .attr("stroke", "black")
-        .attr("stroke-width", 1)
+        .attr("stroke-width", 3)
 });
