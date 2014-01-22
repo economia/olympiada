@@ -36,18 +36,22 @@ d3.csv("../data/marketing-revenue.csv", function(dataset) {
         })])
         .range([0, h]);
 
+    var xScale = d3.scale.ordinal()
+        .domain(dataset.map(function(d) {return d.mesta}))
+        .rangeRoundBands([0, w], 0.05);
+
     /* insert elements */
     svg.selectAll("rect")
         .data(dataset)
         .enter()
         .append("rect")
         .attr("x", function(d, i) {
-            return i * w / dataset.length;
+            return xScale(d.mesta);
         })
         .attr("y", function(d) {   
             return h - yScale(d.celkem);
         })
-        .attr("width", w / dataset.length - 60)
+        .attr("width", xScale.rangeBand())
         .attr("height", function(d) {
             return yScale(d.celkem);
         })
