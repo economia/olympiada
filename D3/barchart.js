@@ -1,8 +1,8 @@
 var margin = {
-    top: 20,
-    right: 20,
-    bottom: 20,
-    left: 20
+    top: 10,
+    right: 10,
+    bottom: 10,
+    left: 50
 };
 
 var w = 670 - margin.left - margin.right;
@@ -31,14 +31,18 @@ var popisky = [
 d3.csv("../data/marketing-revenue.csv", function(dataset) {
 
     var yScale = d3.scale.linear()
-        .domain([0, d3.max(dataset, function(d, i) {
-            return d.celkem;
-        })])
-        .range([0, h]);
+            .domain([0, d3.max(dataset, function(d, i) {
+                return d.celkem;
+            })])
+            .range([h, 0]);
 
     var xScale = d3.scale.ordinal()
-        .domain(dataset.map(function(d) {return d.mesta}))
-        .rangeRoundBands([0, w], 0.05);
+            .domain(dataset.map(function(d) {return d.mesta}))
+            .rangeRoundBands([0, w], 0.05);
+
+    var yAxis = d3.svg.axis()
+            .scale(yScale)
+            .orient("left");
 
     /* insert elements */
     svg.selectAll("rect")
@@ -48,14 +52,18 @@ d3.csv("../data/marketing-revenue.csv", function(dataset) {
         .attr("x", function(d, i) {
             return xScale(d.mesta);
         })
-        .attr("y", function(d) {   
-            return h - yScale(d.celkem);
-        })
         .attr("width", xScale.rangeBand())
-        .attr("height", function(d) {
+        .attr("y", function(d) {   
             return yScale(d.celkem);
+        })
+        .attr("height", function(d) {
+            return h - yScale(d.celkem);
         })
         .attr("fill", "skyblue")
         .attr("stroke", "black")
-        .attr("stroke-width", 3)
+        .attr("stroke-width", 1)
+
+    svg.append("g")
+        .attr("class", "axis")
+        .call(yAxis);
 });
