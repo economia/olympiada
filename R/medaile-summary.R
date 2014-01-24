@@ -4,17 +4,24 @@ d  <- read.csv("../data/medailiste.csv")
 
 head(d)
 
-# wrapper for dplyr
+# medaile podle statu
 
 d_df  <- tbl_df(d)
-
-filter(d_df, stat=="CZE")
-
 staty  <- group_by(d_df, stat)
+medaile  <- group_by(d_df, stat, medaile)
 
+write.csv(arrange(summarise(staty,
+                            count=n()), desc(count)), "../data/staty-medaile.csv")
 
-write.csv(arrange(summarise(staty, count=n()), desc(count)), "../data/staty-medaile.csv")
+write.csv(summarise(medaile, celkem=n()), "../data/staty-medaile-detail.csv")
 
+medaile.podrobne  <- summarise(medaile, celkem=n())
+
+medaile.podrobne  <- ungroup(medaile.podrobne)
+
+medaile.podrobne
+
+filter(d_df, stat=="")
 
 # dplyr demo
      
