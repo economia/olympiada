@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"w",
+				"w"
+			],
+			[
 				"mar",
 				"margin-right"
 			],
@@ -20,6 +24,30 @@
 	"buffers":
 	[
 		{
+			"file": "D3/barchart.css",
+			"settings":
+			{
+				"buffer_size": 160,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "D3/barchart.html",
+			"settings":
+			{
+				"buffer_size": 317,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "D3/barchart.js",
+			"settings":
+			{
+				"buffer_size": 1704,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "data/marketing-revenue.csv",
 			"settings":
 			{
@@ -31,16 +59,24 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 387.0,
+		"height": 347.0,
 		"selected_items":
 		[
 			[
-				"data",
-				"DataConverter: to JSON"
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"live",
+				"Package Control: Discover Packages"
 			],
 			[
 				"ins",
 				"Package Control: Install Package"
+			],
+			[
+				"data",
+				"DataConverter: to JSON"
 			],
 			[
 				"prett",
@@ -75,7 +111,7 @@
 				"Preferences: Alignment Key Bindings – Default"
 			]
 		],
-		"width": 593.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -96,6 +132,7 @@
 	},
 	"file_history":
 	[
+		"/Users/petrkoci/Downloads/pagecounts-20130101-000000",
 		"/Users/petrkoci/code/olympiada/txt/marketing.md",
 		"/Users/petrkoci/code/d3-book/chapter_05/muj_pokus.html",
 		"/Users/petrkoci/code/d3-book/chapter_06/01_drawing_divs.html",
@@ -126,7 +163,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 			""
@@ -137,6 +174,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ý",
+			"padd",
+			"paddin",
 			"Zahraniční politika",
 			"Za zahraniční politiku je primárně odpovědná Vláda České republiky",
 			"Datum,1 EUR",
@@ -148,6 +188,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"ý",
 			"."
 		],
 		"reverse": false,
@@ -159,11 +200,106 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "D3/barchart.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 160,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "D3/barchart.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "D3/barchart.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								648,
+								648
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 74.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "data/marketing-revenue.csv",
 					"semi_transient": true,
 					"settings":
@@ -272,7 +408,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 317.0,
+	"side_bar_width": 189.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
