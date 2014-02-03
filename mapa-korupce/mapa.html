@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="http://service.ihned.cz/js/leaflet/v0.7.0.css" />
+	<script src="http://service.ihned.cz/js/leaflet/v0.7.0.min.js"></script>	
+	<title>Mapa plýtvání a korupce před olympiádou v Soči</title>
+	
+</head>
+<body style="margin:0px">	
+	<div id="map" style="width:670px; height:520px"></div>
+
+	<script type="text/javascript">
+		
+		function drawMap (data) {
+			L.Icon.Default.imagePath = "http://service.ihned.cz/js/leaflet/images";
+			var markers = [];
+			var map = L.map('map').setView([43.58527799963639, 39.720278000459075], 9);
+			
+			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: 'Mapové podklady © přispěvatelé OpenStreetMap',
+				maxZoom: 18
+			}).addTo(map);
+
+
+			for (var i = data.length - 1; i >= 0; i--) {
+				var lat = data[i].lat;
+				var lon = data[i].lon;
+				var marker = L.marker([lat, lon]).addTo(map);
+				var nextMarkerIndex = i - 1;
+				if (nextMarkerIndex < 0) {
+					nextMarkerIndex = data.length - 1;
+				}
+				marker.bindPopup("<h3>" + data[i].titulek + "</h3><p>" + data[i].text + " <strong><a style='color:red' href='#' data-for='" + nextMarkerIndex + "'>Další &raquo;</a></strong></p>").openPopup();
+				markers[i] = marker;
+			};
+		
+			document.addEventListener("click", function(evt) {
+				var nextMarker = evt.target.getAttribute("data-for");
+				console.log(nextMarker);
+
+				if(nextMarker!==null) {
+					markers[nextMarker].openPopup();
+					map.panTo(markers[nextMarker].getLatLng());
+					setTimeout(function() {map.setZoom(13)}, 350);
+
+				}
+			});
+		}	
+	</script>	
+	<script type="text/javascript" src="http://service.ihned.cz/spreadsheet/filter.php?key=0AryMkZ4LYYWNdHBpM3F0a3pEZElqc3RFVUpfaUx4bkE&var=data&cb=drawMap"></script>	
+</body>
+</html>
