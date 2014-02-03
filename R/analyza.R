@@ -190,7 +190,7 @@ rm(df.ted)
 
 df.zaloha <- df
 
-save(df, file="vyskavaha.RData")
+write.table(df, file="vyskavahafinal.csv", sep="|", quote=F)
 
 # skoky pro Adama
 
