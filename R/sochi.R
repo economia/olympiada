@@ -17,7 +17,7 @@ scraper <- function() {
 
   writeLines("Jméno|Disciplína|Stát|Pohlaví|Datum narození|Věk|Výška|Váha|Místo narození|Místo pobytu|Přezdívka|Trenér|Ruka|Zranění|Předchozí|Povolání|Klub|Pozice|Vzor|Jazyky|Hobbies|Ambice|Důvody|Motto", soubor)  
   
-  for(i in 1:length(list)) {
+  for(i in 2782:length(list)) {
     web <- getURL(list[i])
     atlet <- htmlParse(web)
     a.jmeno <- xpathSApply(atlet, "//*[@id=\"content\"]/div/div[1]/aside[1]/div/div/h2", xmlValue)

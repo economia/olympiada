@@ -172,6 +172,9 @@ for(i in 1:24) {
   
 }
 
+df$vek <- rowMeans(df[, 177:200], na.rm=T)
+df.zaloha <- df
+
 df.zimni <- data.frame()
 for(i in 1:24) {
   df.ted <- df[grep("Winter", df[,5+6*i], fixed=T),]
@@ -190,12 +193,28 @@ rm(df.ted)
 
 df.zaloha <- df
 
-save(df, file="vyskavaha.RData")
+write.table(df, file="vyskavahafinal.csv", sep="|", quote=F)
 
-# skoky pro Adama
+nejvyssi.vek <- df.zeny[1,177]
+
+# jednotlivé sporty
 
 df.skoky <- df[df$sport == "Ski Jumping",] 
-write.csv(df.skoky, file="skokani.csv")
+df.alpske <- df[df$sport == "Alpine Skiing",] 
+df.biatlon <- df[df$sport == "Biathlon",] 
+df.boby <- df[df$sport == "Bobsleigh",]
+df.bezky <- df[df$sport == "Cross Country Skiing",]
+df.curling <- df[df$sport == "Curling",]
+df.kraso <- df[df$sport == "Figure Skating",]
+df.freestyle <- df[df$sport == "Freestyle Skiing",]
+df.hokej <- df[df$sport == "Ice Hockey",]
+df.sane <- df[df$sport == "Luge",]
+df.military <- df[df$sport == "Military Ski Patrol",]
+df.severska <- df[df$sport == "Nordic Combined",]
+df.short <- df[df$sport == "Short Track Speed Skating",]
+df.skeleton <- df[df$sport == "Skeleton",]
+df.snowboard <- df[df$sport == "Snowboarding",]
+df.rychlo <- df[df$sport == "Speed Skating",]
 
 ###########
 # analýza #
@@ -252,6 +271,80 @@ for (i in 1:24) {
 }
 rm(nejlehci.muz); rm(nejlehci.zena); rm(nejtezsi.muz); rm(nejtezsi.zena); rm(nejmensi.muz); rm(nejmensi.zena); rm(nejvyssi.muz); rm(nejvyssi.zena); rm(nejstarsi.muz); rm(nejmladsi.muz); rm(nejstarsi.zena); rm(nejmladsi.zena); rm(nejstarsi.muz.ted); rm(nejstarsi.zena.ted); rm(nejvyssi.vek); rm(i); rm(df.muzi); rm(df.zeny)
 
+# výška, váha, věk podle disciplíny
+
+aggr.zimni.vyska <- aggregate(df.zimni$vyska ~ df.zimni$sport, data=df.zimni, FUN=mean)
+aggr.zimni.vaha <- aggregate(df.zimni$vaha ~ df.zimni$sport, data=df.zimni, FUN=mean)
+aggr.zimni.vek <- aggregate(df.zimni$vek ~ df.zimni$sport, data=df.zimni, FUN=mean)
+
+hry <- levels(factor(df$hry1))
+hry <- hry[grep("Winter", hry)]
+hry <- c("1908 Summer", "1920 Summer", hry)
+
+vvv.snowboard.medaile <- data.frame()
+sloupec <- 1
+for(i in hry) {
+  vek <- c()
+  vyska <- c()
+  vaha <- c()
+  for(j in 1:nrow(df.snowboard)) {
+    for(k in 1:24) {
+      if(df.snowboard[j,5+6*k] == i && as.numeric(df.snowboard[j,8+6*k]) < 4) {
+        vek <- c(vek, df.snowboard[j, 176+k])
+        vyska <- c(vyska, df.snowboard$vyska[j])
+        vaha <- c(vaha, df.snowboard$vaha[j])
+      }
+    }
+  }
+  vvv.snowboard.medaile[1, sloupec] <- mean(vek, na.rm=T)
+  vvv.snowboard.medaile[2, sloupec] <- mean(vyska, na.rm=T)
+  vvv.snowboard.medaile[3, sloupec] <- mean(vaha, na.rm=T)
+  sloupec <- sloupec+1
+}
+colnames(vvv.snowboard.medaile) <- hry
+rownames(vvv.snowboard.medaile) <- c("vek", "vyska", "vaha")
+
+rm(i); rm(j); rm(k); rm(sloupec); rm(vaha); rm(vek); rm(vyska)  
+
+# grafy výška váha věk
+
+i <- 2
+plot(t(vvv.kraso[i,]), type="l", ylim=c(160, 190), col="lightblue", xaxt="n", xlab="", ylab="", main="Průměrný ... podle olympiády")
+axis(1, at=1:23, labels=substr(colnames(vvv.kraso), 1, 4), las=3)
+lines(t(vvv.alpske[i,]), col="orange")
+lines(t(vvv.bezky[i,]), col="brown")
+lines(t(vvv.biatlon[i,]), col="pink")
+lines(t(vvv.boby[i,]), col="darkgreen")
+lines(t(vvv.curling[i,]), col="darkred")
+lines(t(vvv.freestyle[i,]), col="purple")
+lines(t(vvv.hokej[i,]), col="blue")
+lines(t(vvv.military[i,]), col="khaki")
+lines(t(vvv.rychlo[i,]), col="yellow")
+lines(t(vvv.sane[i,]), col="green")
+lines(t(vvv.severska[i,]), col="darkblue")
+lines(t(vvv.short[i,]), col="grey")
+lines(t(vvv.skeleton[i,]), col="black")
+lines(t(vvv.snowboard[i,]), col="lightgreen")
+lines(t(vvv.skoky[i,]), col="red")
+
+i <- 3
+j <- vvv.snowboard
+k <- vvv.snowboard.medaile
+plot(t(j[i,]), type="l", ylim=c(0.98*min(j[i,], na.rm=T), 1.02*max(j[i,], na.rm=T)), col="blue", xaxt="n", xlab="", ylab="", main="Průměrný ... podle olympiády")
+axis(1, at=1:23, labels=substr(colnames(vvv.skoky), 1, 4), las=3)
+lines(t(k[i,]), col="blue", lty=3)
+
+i <- 3
+j <- 23
+k <- 10
+grafabs <- data.frame(vvv.alpske[i,j], vvv.bezky[i,j], vvv.biatlon[i,j], vvv.boby[i,j], vvv.curling[i,j], vvv.freestyle[i,j], vvv.hokej[i,j], vvv.kraso[i,j], vvv.rychlo[i,j], vvv.sane[i,j], vvv.severska[i,j], vvv.short[i,j], vvv.skeleton[i,j], vvv.skoky[i,j], vvv.snowboard[i,j])
+grafrel <- data.frame(vvv.alpske[i,j]-vvv.alpske[i,k], vvv.bezky[i,j]-vvv.bezky[i,k], vvv.biatlon[i,j]-vvv.biatlon[i,k], vvv.boby[i,j]-vvv.boby[i,k], vvv.curling[i,j]-vvv.curling[i,k], vvv.freestyle[i,j]-vvv.freestyle[i,k], vvv.hokej[i,j]-vvv.hokej[i,k], vvv.kraso[i,j]-vvv.kraso[i,k], vvv.rychlo[i,j]-vvv.rychlo[i,k], vvv.sane[i,j]-vvv.sane[i,k], vvv.severska[i,j]-vvv.severska[i,k], vvv.short[i,j]-vvv.short[i,k], vvv.skeleton[i,j]-vvv.skeleton[i,k], vvv.skoky[i,j]-vvv.skoky[i,k], vvv.snowboard[i,j]-vvv.snowboard[i,k])
+colnames(grafabs) <- c("Alpské lyžování", "Běžecké lyžování", "Biatlon", "Boby", "Curling", "Freestyle lyžování", "Lední hokej", "Krasobruslení", "Rychlobruslení", "Saně", "Severská kombinace", "Short Track", "Skeleton", "Skoky na lyžích", "Snowboarding")
+colnames(grafrel) <- c("Alpské lyžování", "Běžecké lyžování", "Biatlon", "Boby", "Curling", "Freestyle lyžování", "Lední hokej", "Krasobruslení", "Rychlobruslení", "Saně", "Severská kombinace", "Short Track", "Skeleton", "Skoky na lyžích", "Snowboarding")
+grafabs <- grafabs[order(grafabs, decreasing=T)]
+grafrel <- grafrel[order(grafabs, decreasing=T)]
+barplot(t(t(grafabs)), ylim=c(0.95*min(grafabs), 1.02*max(grafabs)), las=3, xpd=F)
+barplot(t(t(grafrel)), ylim=c(0.95*min(grafrel), 1.02*max(grafrel)), las=3, xpd=F)
 
 # samostatné soubory pro Česko/Československo
 
