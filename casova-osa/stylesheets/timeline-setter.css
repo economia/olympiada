@@ -1,5 +1,5 @@
 .timeline_setter {
-  width:85%;
+  width:95%;
   margin:0 auto;
   padding:10px;
   position:relative;
@@ -36,7 +36,7 @@
   float:left;
   clear:left;
   display:block;
-  width:150px;
+  width:100%;
 }
 .TS-item_year_text {
   float:left;
@@ -303,6 +303,7 @@
   float:left;
   -webkit-transform:rotate(45deg);
   -moz-transform:rotate(45deg);
+  display:none;
 }
 
 /* color priority */
@@ -321,35 +322,35 @@
 
 /* 1 */
 .TS-notch_color_1,.TS-series_legend_swatch_1 {
-  background-color: #065718 !important;
+  background-color: orangered !important;
 }
 .TS-css_arrow_color_1 {
-  border-bottom-color:#065718 !important;
+  border-bottom-color:orangered !important;
 }
 .TS-item_color_1 {
-  border-top:1px solid #065718 !important;
+  border-top:1px solid orangered !important;
 }
 
 /* 2 */
 .TS-notch_color_2,.TS-series_legend_swatch_2 {
-  background-color: #EDC047 !important;
+  background-color: gray !important;
 }
 .TS-css_arrow_color_2 {
-  border-bottom-color:#EDC047 !important;
+  border-bottom-color:gray !important;
 }
 .TS-item_color_2 {
-  border-top:1px solid #EDC047 !important;
+  border-top:1px solid gray !important;
 }
 
 /* 3 */
 .TS-notch_color_3,.TS-series_legend_swatch_3 {
-  background-color: #91ADD1 !important;
+  background-color: skyblue !important;
 }
 .TS-css_arrow_color_3 {
-  border-bottom-color:#91ADD1 !important;
+  border-bottom-color:skyblue !important;
 }
 .TS-item_color_3 {
-  border-top:1px solid #91ADD1 !important;
+  border-top:1px solid skyblue !important;
 }
 
 /* 4 */
